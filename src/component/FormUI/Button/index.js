@@ -3,27 +3,27 @@ import { Button } from "@mui/material";
 
 import { useFormikContext } from "formik";
 
-const ButtonWrapper=({
+const ButtonWrapper = ({
     children,
     ...otherProps
-})=>{
+}) => {
 
 
-    const {submitForm}=useFormikContext();
+    const { submitForm } = useFormikContext();
 
-  const handleSubmit=()=>{
-    submitForm();
-  }
-   const configButton={
-    
-    color:'primary',
-    variant:'contained',
-    onClick:handleSubmit,
-fullWidth:true
-   }
-    return(
+    const handleSubmit = () => {
+        submitForm();
+    }
+    const configButton = {
+
+        color: 'primary',
+        variant: 'contained',
+        onClick: handleSubmit,
+        fullWidth: true
+    }
+    return (
         <Button {...configButton} >
-         {children}
+            {children}
         </Button>
     )
 }

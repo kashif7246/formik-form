@@ -3,22 +3,22 @@ import { TextField } from "@mui/material";
 import { useField } from "formik";
 
 
-const DateTimePicker=({name,...otherProps})=>{
+const DateTimePicker = ({ name, ...otherProps }) => {
 
-    const [field,meta]=useField(name)
-
-
+    const [field, meta] = useField(name)
 
 
-    const configDateTimePicker={
+
+
+    const configDateTimePicker = {
         ...field,
         ...otherProps,
-        type:'date',
-        varient:'outlined',
-        fullWidth:true,
-         inputLabelProps:{
-            shrink:false
-         }
+        type: 'date',
+        varient: 'outlined',
+        fullWidth: true,
+        inputLabelProps: {
+            shrink: false
+        }
     }
 
     if (meta && meta.touched && meta.error) {
@@ -26,8 +26,8 @@ const DateTimePicker=({name,...otherProps})=>{
         configDateTimePicker.helperText = meta.error
     }
 
-    return(
-  <TextField {...configDateTimePicker}  />
+    return (
+        <TextField {...configDateTimePicker} />
     )
 }
 export default DateTimePicker;
